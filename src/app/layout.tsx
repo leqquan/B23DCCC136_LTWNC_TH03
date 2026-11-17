@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Header from '@/components/Header';
+import Providers from './providers';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -19,13 +20,10 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body>
-        <header className="site-header">
-          <nav className="site-nav">
-            <Link href="/">Trang chủ</Link>
-            <Link href="/books">Sách</Link>
-          </nav>
-        </header>
-        <main className="site-main">{children}</main>
+        <Providers>
+          <Header />
+          <main className="site-main">{children}</main>
+        </Providers>
       </body>
     </html>
   );
